@@ -4,11 +4,11 @@ from app.models.pydantic.sentence_embedding import (
     EmbeddingRequest,
     EmbeddingResponse,
 )
-from serving.config import MODEL_NAME, MAX_LEN
+from serving.config import MODEL_PATH, MAX_LEN
 from serving.huggingface.sentence_encoder import Model
 
 
-model = Model(MODEL_NAME, MAX_LEN)
+model = Model(MODEL_PATH, MAX_LEN)
 app = FastAPI()
 
 

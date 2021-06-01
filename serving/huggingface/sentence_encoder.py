@@ -6,10 +6,10 @@ from transformers.tokenization_utils_base import BatchEncoding
 
 
 class Model:
-    def __init__(self, model_name: str, max_len: int):
-        self.model_name = model_name
-        self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
-        self.model = AutoModel.from_pretrained(self.model_name)
+    def __init__(self, model_path: str, max_len: int):
+        self.model_path = model_path
+        self.tokenizer = AutoTokenizer.from_pretrained(self.model_path)
+        self.model = AutoModel.from_pretrained(self.model_path)
         self.max_len = max_len
 
     def encode(self, texts: List[str]):
