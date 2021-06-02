@@ -1,6 +1,5 @@
 .vscode/*
 venv_serving
-onnx/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
