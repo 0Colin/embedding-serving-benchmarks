@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 
-
+# read all the timings
 all_data = {}
 for f in os.listdir("report"):
     if f != ".gitignore":
@@ -15,6 +15,7 @@ for f in os.listdir("report"):
             data = json.load(fl)
         all_data[f] = data
 
+# mean timings by config
 mean_times = []
 for k, v in all_data.items():
     for batch_size, timings in v.items():
@@ -24,6 +25,7 @@ mean_times = pd.DataFrame(
     mean_times, columns=["config", "batch_size", "latency"]
 )
 
+# categories
 updated_configs = []
 for c in mean_times.config:
     updated_config = ""
@@ -46,7 +48,7 @@ mean_times["device"] = mean_times.updated_config.apply(
     lambda x: "cpu" if "cpu" in x else "gpu"
 )
 
-
+# cpu plots
 cpu_data = mean_times[mean_times.device == "cpu"]
 cpu_data.sort_values(by=["batch_size", "latency"], inplace=True)
 fig, axs = plt.subplots(cpu_data.batch_size.nunique(), 1, figsize=(10, 6))
@@ -65,7 +67,7 @@ for i, batch_size in enumerate(
 plt.tight_layout()
 plt.savefig("imgs/cpu.png")
 
-
+# gpu plots
 cpu_data = mean_times[mean_times.device == "gpu"]
 cpu_data.sort_values(by=["batch_size", "latency"], inplace=True)
 fig, axs = plt.subplots(cpu_data.batch_size.nunique(), 1, figsize=(10, 6))

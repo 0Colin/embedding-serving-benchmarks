@@ -81,11 +81,14 @@ regex==2021.4.4
 requests==2.25.1
 Rx==1.6.1
 sacremoses==0.0.45
+scikit-learn==0.24.2
 scipy==1.6.3
 seaborn==0.11.1
 six==1.16.0
+sklearn==0.0
 starlette==0.14.2
 sympy==1.8
+threadpoolctl==2.1.0
 tokenizers==0.10.3
 toml==0.10.2
 torch==1.8.1+cu111
