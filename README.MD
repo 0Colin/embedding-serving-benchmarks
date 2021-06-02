@@ -7,7 +7,6 @@ Goal here is to get lantecy stats when serving sentence transfomers over an API 
 - gpu (pytorch + onnx/fp16)
 
 ## Setup
----
 Modify `MODEL` to the appropriate huggingface model and run setup.py
 ```
 MODEL = "sentence-transformers/LaBSE"
@@ -37,7 +36,6 @@ Generate the plots
 ![GPU latency](imgs/gpu.png)
 
 ## Classifier training and validation report
----
 data/atis.csv
 ---
 `GPU + pytorch fp32`
