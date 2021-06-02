@@ -24,7 +24,7 @@ class Model:
             self.model = InferenceSession(
                 f"onnx/{ONNX_MODEL}_fp16.onnx"
                 if self.fp16
-                else f"onnx/{ONNX_MODEL}.onnx",
+                else f"onnx/{ONNX_MODEL}_o1_cpu.onnx",
                 options,
                 providers=[
                     "CPUExecutionProvider"
